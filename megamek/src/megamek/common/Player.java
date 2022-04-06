@@ -41,6 +41,7 @@ public final class Player extends TurnOrdered {
     private String name;
     private String email;
     private int id;
+    private double rating;
 
     private int team = TEAM_NONE;
 
@@ -195,6 +196,10 @@ public final class Player extends TurnOrdered {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public double getRating() { return this.rating; }
+
+    public void setRating(double rating) { this.rating = rating; }
 
     public int getId() {
         return id;
