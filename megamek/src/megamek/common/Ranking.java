@@ -7,8 +7,6 @@ import java.util.List;
 public class Ranking {
     
     private final Enumeration<Player> players;
-    private List<Player> winners;
-    private List<Player> losers;
     private final int winnerPlayerId;
     private final int winnerTeamId;
     
@@ -16,8 +14,6 @@ public class Ranking {
         this.players = players;
         this.winnerPlayerId = winnerPlayerId;
         this.winnerTeamId = winnerTeamId;
-        winners = new ArrayList<>();
-        losers = new ArrayList<>();
     }
 
     /**
@@ -27,6 +23,9 @@ public class Ranking {
         if (winnerPlayerId == Player.PLAYER_NONE && winnerTeamId == Player.TEAM_NONE) {
             return;
         }
+
+        List<Player> winners = new ArrayList<>();;
+        List<Player> losers = new ArrayList<>();
 
         for (Enumeration<Player> i = players; i.hasMoreElements(); ) {
             final Player player = i.nextElement();
